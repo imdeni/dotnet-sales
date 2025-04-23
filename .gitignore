@@ -1,0 +1,38 @@
+# Ignore build folders
+bin/
+obj/
+artifacts/
+
+# Keep publish folder
+!publish/
+
+# VS and IDE specific
+.vs/
+*.user
+*.suo
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# Logs and database
+*.log
+*.dbmdl
+*.bak
+*.mdf
+*.ldf
+
+# Node modules (if using frontend assets)
+node_modules/
+
+# Env files
+.env
+.env.*
+
+# Test results
+TestResults/
+*.trx
+
+# Rider or VSCode settings
+.idea/
+.vscode/
