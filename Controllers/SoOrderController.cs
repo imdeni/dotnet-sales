@@ -7,6 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
 
+using ClosedXML.Excel;
+using System.IO;
+using Microsoft.AspNetCore.Mvc;
+
+
 public class SoOrderController : Controller
 {
     private readonly AppDbContext _context;
@@ -126,5 +131,41 @@ public class SoOrderController : Controller
             return Json(new { success = false, message = "An error occurred while creating the sales order." });
         }
     }
+
+    [HttpPost]
+    public IActionResult ExportToExcel()
+    {
+        using var workbook = new XLWorkbook();
+        var worksheet = workbook.Worksheets.Add("SalesOrders");
+
+        worksheet.Cell(1, 1).Value = "No";
+        worksheet.Cell(1, 2).Value = "Sales Order";
+        worksheet.Cell(1, 3).Value = "Order Date";
+        worksheet.Cell(1, 4).Value = "Customer";
+
+        var orders = _context.SoOrders
+            .Include(o => o.ComCustomer)
+            .OrderBy(o => o.OrderDate)
+            .ToList();
+
+        for (int i = 0; i < orders.Count; i++)
+        {
+            var order = orders[i];
+            worksheet.Cell(i + 2, 1).Value = i + 1;
+            worksheet.Cell(i + 2, 2).Value = order.OrderNo;
+            worksheet.Cell(i + 2, 3).Value = order.OrderDate.ToString("d/M/yyyy");
+            worksheet.Cell(i + 2, 4).Value = order.ComCustomer.CustomerName;
+        }
+
+        using var stream = new MemoryStream();
+        workbook.SaveAs(stream);
+        stream.Position = 0;
+
+        return File(stream.ToArray(),
+            "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+            "SalesOrders.xlsx");
+    }
+
+
 
 }
