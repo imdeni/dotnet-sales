@@ -1,0 +1,250 @@
+@model SoOrderViewModel
+
+
+<form asp-action="Create" method="post" id="salesOrderForm">
+    @Html.AntiForgeryToken()
+
+    <div class="px-8 p-4 bg-gradient-to-r from-blue-500 to-blue-900 text-white text-lg font-semibold rounded-t-md shadow">
+        ADD NEW - SALES ORDER
+    </div>
+    <div class="py-2 text-md bg-blue-900 font-semibold text-white text-center border-b border-gray-300 mt-2">Sales Order Information</div>
+
+    <div class="px-8 py-6">
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 mt-2">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <label for="SoNo" class="block text-sm font-medium text-gray-700">Sales Order Number *</label>
+                <input type="text" id="SoNo" name="SoOrder.OrderNo" class="h-8 p-2 pl-3 pr-10 border border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 w-full" required>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <label for="ComCustomerId" class="block text-sm font-medium text-gray-700">Customer</label>
+                <select id="ComCustomerId" name="SoOrder.ComCustomerId"
+                    class="h-8 pt-1 p-2 pl-3 pr-10 border border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 w-full text-sm"
+                    required>
+                    <option value="">Select Customer</option>
+                    @foreach (var customer in Model.Customers)
+                    {
+                        <option value="@customer.Value">@customer.Text</option>
+                    }
+                </select>
+            </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 mt-2">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <label for="SoDate" class="block text-sm font-medium text-gray-700">Order Date *</label>
+                <div class="relative">
+                    <div>
+                        <input name="oOrder.OrderDate" placeholder="Pick Date" id="SoDate" type="date" 
+                            class="h-8 p-2 pl-3 pr-10 border border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 w-full" />
+                        <span class="absolute right-3 top-1 text-black">
+                            <i class="fas fa-calendar-alt"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
+                <label for="Address" class="block text-sm font-medium text-gray-700">Address</label>
+                <textarea id="Address" name="SoOrder.Address" rows="4" class="h-24 p-2 pl-3 pr-10 border border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 w-full" required></textarea>
+            </div>
+        </div>
+    </div>
+
+    <div class="py-2 text-md bg-blue-900 font-semibold text-white text-center border-b border-gray-300 mt-2">Detail Item Information</div>
+
+    <div class="px-8 py-2">
+        <div class="overflow-x-auto">
+            <button type="button" onclick="addItemRow()" class="bg-red-900 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm">Add Item</button>
+
+            <table class="mt-2 min-w-full table-auto text-sm border border-white-300 rounded">
+                <thead class="bg-gray-100 text-white bg-blue-900">
+                    <tr class="text-left">
+                        <th class="px-3 py-2 border">No</th>
+                        <th class="px-3 py-2 border">ACTION</th>
+                        <th class="px-3 py-2 border">ITEM NAME</th>
+                        <th class="px-3 py-2 border">QTY</th>
+                        <th class="px-3 py-2 border">PRICE</th>
+                        <th class="px-3 py-2 border">TOTAL</th>
+                    </tr>
+                </thead>
+                <tbody id="itemTableBody" class=" bg-white">
+                </tbody>
+            </table>
+        </div>
+
+        <div class="flex justify-end text-sm font-medium bg-white py-2 pr-32">
+            <div class="space-x-4">
+                <span>Total item: <span id="totalItems" class="pr-16">0</span></span>
+                <span>Total amount: <span id="totalAmount" class="pr-16">0.00</span></span>
+            </div>
+        </div>
+
+        <div class="flex justify-end mt-6 space-x-4 justify-center">
+            <button type="button" onclick="saveGlobal()" class="bg-red-900 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm">Save</button>
+            <button type="button" onclick="window.location.href='/'" class="bg-blue-900 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm">cancel</button>
+        </div>
+    </div>
+</form>
+
+
+<script>
+    let itemIndex = 0;
+    const items = [];
+    let hasInputRow = false;
+
+    function resetForm() {
+    document.getElementById("SoNo").value = "";
+    document.getElementById("SoDate").value = "";
+    document.getElementById("ComCustomerId").value = "Select Customer";
+    document.getElementById("Address").value = "";
+
+    items.length = 0;
+
+    const tbody = document.getElementById("itemTableBody");
+    tbody.innerHTML = "";
+
+    hasInputRow = false;
+
+    updateSummary();
+}
+
+
+    function addItemRow() {
+        if (hasInputRow) {
+            alert("Please save or remove the current input before adding a new one.");
+            return;
+        }
+
+        const tbody = document.getElementById("itemTableBody");
+        const row = document.createElement("tr");
+        row.setAttribute("id", `inputRow`);
+
+        row.innerHTML = `
+            <td class="border px-3 py-1">-</td>
+            <td class="border px-3 py-1 text-center">
+                <button onclick="saveRow()" class="text-blue-600 hover:underline text-xs">
+                    <span class="text-lg">💾</span>
+                </button>
+            </td>
+            <td class="border px-3 py-1"><input type="text" class="w-full p-1 border border-black rounded" id="itemName"></td>
+            <td class="border px-3 py-1"><input type="number" class="w-full p-1 border border-black rounded" id="itemQty" oninput="calculateRowTotal()"></td>
+            <td class="border px-3 py-1"><input type="number" class="w-full p-1 border border-black rounded" id="itemPrice" oninput="calculateRowTotal()"></td>
+            <td class="border px-3 py-1 text-right" id="itemTotal">0.00</td>
+        `;
+        tbody.appendChild(row);
+        hasInputRow = true;
+
+        document.getElementById("itemName").focus();
+    }
+
+    function calculateRowTotal() {
+        const qty = parseFloat(document.getElementById("itemQty").value) || 0;
+        const price = parseFloat(document.getElementById("itemPrice").value) || 0;
+        const total = qty * price;
+        document.getElementById("itemTotal").innerText = total.toFixed(2);
+    }
+
+    function saveRow() {
+        const name = document.getElementById("itemName").value.trim();
+        const qty = parseFloat(document.getElementById("itemQty").value);
+        const price = parseFloat(document.getElementById("itemPrice").value);
+
+        if (!name || isNaN(qty) || isNaN(price)) {
+            alert("Please fill all fields before saving.");
+            return;
+        }
+
+        const total = qty * price;
+        items.push({ itemName: name, qty, price, total });
+
+        const tbody = document.getElementById("itemTableBody");
+        const newRow = document.createElement("tr");
+        newRow.setAttribute("id", `row-${itemIndex}`);
+        newRow.innerHTML = `
+            <td class="border px-3 py-1">${itemIndex + 1}</td>
+            <td class="border px-3 py-1 text-center">
+                <button onclick="removeRow(${itemIndex})" class="text-red-600 hover:underline text-xs">
+                    <span class="text-base">❌</span>
+                </button>
+            </td>
+            <td class="border px-3 py-1">${name}</td>
+            <td class="border px-3 py-1 text-right">${qty}</td>
+            <td class="border px-3 py-1 text-right">${price.toFixed(2)}</td>
+            <td class="border px-3 py-1 text-right">${total.toFixed(2)}</td>
+        `;
+
+        document.getElementById("inputRow").remove();
+        tbody.appendChild(newRow);
+
+        hasInputRow = false;
+        itemIndex++;
+        updateSummary();
+
+        addItemRow();
+    }
+
+    function removeRow(index) {
+        items.splice(index, 1);
+        document.getElementById(`row-${index}`).remove();
+        updateSummary();
+    }
+
+    function updateSummary() {
+        const totalItems = items.reduce((sum, item) => sum + item.qty, 0);
+        const totalAmount = items.reduce((sum, item) => sum + item.total, 0);
+        document.getElementById("totalItems").innerText = totalItems;
+        document.getElementById("totalAmount").innerText = totalAmount.toLocaleString(undefined, { minimumFractionDigits: 2 });
+    }
+
+    function saveGlobal() {
+        const soNo = document.getElementById("SoNo").value.trim();
+        const soDate = document.getElementById("SoDate").value.trim();
+        const customerId = document.getElementById("ComCustomerId").value;
+        const Address = document.getElementById("Address").value.trim();
+
+        if (!soNo || !soDate || customerId === "Select Customer") {
+            alert("Please fill all Sales Order fields before saving.");
+            return;
+        }
+
+        if (items.length === 0) {
+            alert("Please add at least one item to the order.");
+            return;
+        }
+
+        const data = {
+        SoOrder: {
+            OrderNo: soNo,
+            OrderDate: soDate,
+            ComCustomerId: customerId,
+            Address: Address,
+        },
+        SoItems: items.map((item) => ({
+            ItemName: item.itemName,
+            Quantity: item.qty,
+            Price: item.price,
+        }))
+    };
+
+
+        fetch('/SoOrder/Create', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert("Sales Order saved successfully.");
+                resetForm();
+            } else {
+                alert("Error: " + data.message);
+            }
+        })
+        .catch(error => {
+            alert("There was an error saving the Sales Order.");
+        });
+    }
+
+</script>

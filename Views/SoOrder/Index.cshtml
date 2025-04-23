@@ -1,0 +1,123 @@
+@model PaginationViewModel
+
+<div class="px-8 p-4 bg-gradient-to-r from-blue-500 to-blue-900 text-white text-lg font-semibold rounded-t-md shadow w-full">
+    SALES ORDER
+</div>
+
+<div class="p-4 pb-12">
+    <form method="get" asp-action="Index" class="py-4 px-12 space-y-4 rounded-lg shadow w-full border-2 border-black">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-2">
+                <label for="keyword" class="my-auto">Keywords</label>
+                <input name="keyword" id="keyword" placeholder="Input Here" 
+                    class="h-8 p-2 border border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 w-full" />
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-2">
+                <label for="orderDate" class="my-auto">Order Date</label>
+                <div class="relative">
+                    <input name="orderDate" placeholder="Pick Date" id="orderDate" type="date" 
+                        class="h-8 p-2 pl-3 pr-10 border border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 w-full" />
+                    <span class="absolute right-3 top-1/2 transform -translate-y-1/2 text-black">
+                        <i class="fas fa-calendar-alt"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex justify-end gap-2">
+            <button onclick="window.location.href='/'"
+                class="h-8  bg-blue-900 hover:bg-gray-500 text-white px-4 rounded shadow mt-2 md:mt-0 md:ml-2 flex items-center justify-center space-x-2 w-fit">
+                <i class="fas fa-sync-alt"></i>
+            </button>
+
+
+            <button type="submit" 
+                    class="h-8 bg-blue-900 hover:bg-blue-700 text-white px-4 rounded shadow w-full md:w-1/6">
+                Search
+            </button>
+        </div>
+    </form>
+
+    <div class="mt-4 flex flex-col sm:flex-row justify-between gap-3">
+        <div class="flex items-center gap-2">
+            <a href="@Url.Action("Create")" 
+            class="bg-red-800 hover:bg-pink-700 text-white px-4 py-2 rounded shadow text-center w-full sm:w-auto">
+                Add New Data
+            </a>
+            <button 
+                class="bg-blue-900 hover:bg-gray-700 text-white px-4 py-2 rounded shadow w-full sm:w-auto flex items-center space-x-2">
+                <i class="fas fa-file-excel"></i>
+                <span>Export To Excel</span>
+            </button>
+
+        </div>
+    </div>
+
+    <div class="mt-4 overflow-x-auto rounded shadow w-full">
+        <table class="w-full text-sm font-bold text-left text-gray-700 text-center border border-gray-300">
+            <thead class="bg-blue-900 text-white border border-gray-300">
+                <tr>
+                    <th class="p-3 border border-gray-300">No</th>
+                    <th class="p-3 border border-gray-300">Action</th>
+                    <th class="p-3 border border-gray-300">Sales Order</th>
+                    <th class="p-3 border border-gray-300">Order Date</th>
+                    <th class="p-3 border border-gray-300">Customer</th>
+                </tr>
+            </thead>
+            <tbody>
+    @for (int i = 0; i < Model.Orders.Count; i++)
+    {
+        <tr class="border-b border-blue-300 bg-white hover:bg-gray-100 text-center">
+            <td class="p-3 border border-gray-300">@(i + 1)</td>
+            <td class="p-3 border border-gray-300">
+                <div class="gap-6 flex justify-center items-center">
+                <a href="#" class="text-blue-600 hover:text-blue-800">✏️</a>
+                <a href="#" class="text-red-600 hover:text-red-800">🗑️</a>
+                </div>
+            </td>
+            <td class="p-3 border border-gray-300">@Model.Orders[i].OrderNo</td>
+            <td class="p-3 border border-gray-300">@Model.Orders[i].OrderDate.ToString("d/M/yyyy")</td>
+            <td class="p-3 border border-gray-300">@Model.Orders[i].ComCustomer.CustomerName</td>
+        </tr>
+    }
+</tbody>
+
+        </table>
+    </div>
+
+    <div class="grid grid-cols-2 gap-4 bg-white pt-2">
+        <div class="flex justify-left p-2 my-auto pl-4">
+            <ul class="flex space-x-2">
+                @if (Model.CurrentPage > 1)
+                {
+                    <li><a href="@Url.Action("Index", new { keyword = ViewData["Keyword"], orderDate = ViewData["OrderDate"], page = Model.CurrentPage - 1 })" class="px-3 py-1 bg-white text-black rounded"><i class="fas fa-angle-left"></i></a></li>
+                }
+
+                @for (int i = 1; i <= Model.TotalPages; i++)
+                {
+                    <li>
+                        <a href="@Url.Action("Index", new { keyword = ViewData["Keyword"], orderDate = ViewData["OrderDate"], page = i })"
+                            class="px-3 py-1 @(i == Model.CurrentPage ? "bg-red-300 bg-opacity-80 text-red-600 font-semibold" : "bg-white text-red-600 font-semibold") rounded">
+                            @i
+                        </a>
+                    </li>
+                }
+
+                @if (Model.CurrentPage < Model.TotalPages)
+                {
+                <li>
+                    <a href="@Url.Action("Index", new { keyword = ViewData["Keyword"], orderDate = ViewData["OrderDate"], page = Model.CurrentPage + 1 })" class="px-3 py-1 bg-white text-black rounded focus:outline-none focus:ring-0 hover:no-underline">
+                        <span class="text-sm"><i class="fas fa-angle-right"></i></span>
+                    </a>
+                </li>
+
+
+                }
+            </ul>
+        </div>
+        <div class="text-sm text-gray-600 my-auto text-right pr-4">
+            Showing @((Model.CurrentPage - 1) * 10 + 1) - @Math.Min(Model.CurrentPage * 10, Model.TotalItems) of @Model.TotalItems items
+        </div>
+
+    </div>
+</div>

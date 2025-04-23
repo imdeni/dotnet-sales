@@ -1,7 +1,7 @@
-namespace TechnicalTest.Models
+using System.ComponentModel.DataAnnotations;
 
-{  
-    using System.ComponentModel.DataAnnotations;
+namespace TechnicalTest.Models
+{
     public class SoItemModel
     {
         [Key]

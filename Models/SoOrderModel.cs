@@ -1,8 +1,9 @@
 using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace TechnicalTest.Models
 {
-    using System.ComponentModel.DataAnnotations;
     public class SoOrderModel
     {
         [Key]

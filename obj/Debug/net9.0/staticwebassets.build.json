@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "T8Q/vnEpVAdVTms4w3FmIIz4g2oIWr+dxGnm+onkZWk=",
+  "Hash": "Hs/Zi9IH4KrR3jWtagBf1WlrESh2m25RpW/8xBdWEA4=",
   "Source": "TechnicalTest",
   "BasePath": "_content/TechnicalTest",
   "Mode": "Default",
@@ -332,12 +332,12 @@
       "OriginalItemSpec": "C:\\deni\\dotnet\\TechnicalTest\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Identity": "C:\\deni\\dotnet\\TechnicalTest\\obj\\Debug\\net9.0\\compressed\\7jl32redzq-je5l06uk43.gz",
+      "Identity": "C:\\deni\\dotnet\\TechnicalTest\\obj\\Debug\\net9.0\\compressed\\7jl32redzq-bi772p8gxu.gz",
       "SourceId": "TechnicalTest",
       "SourceType": "Computed",
       "ContentRoot": "C:\\deni\\dotnet\\TechnicalTest\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/TechnicalTest",
-      "RelativePath": "TechnicalTest#[.{fingerprint=je5l06uk43}]?.styles.css.gz",
+      "RelativePath": "TechnicalTest#[.{fingerprint=bi772p8gxu}]?.styles.css.gz",
       "AssetKind": "All",
       "AssetMode": "CurrentProject",
       "AssetRole": "Alternative",
@@ -346,8 +346,8 @@
       "RelatedAsset": "C:\\deni\\dotnet\\TechnicalTest\\obj\\Debug\\net9.0\\scopedcss\\bundle\\TechnicalTest.styles.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "tnbpvepms1",
-      "Integrity": "SY6jgbvFrt8o+6PrZfuYLmzvclASMHmOuvpJBAGsunk=",
+      "Fingerprint": "1770rvqvgk",
+      "Integrity": "bVtv1y2SWDcCW+FM3I0drCXBOJ7wC0iCIIm3ukUUqSM=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\deni\\dotnet\\TechnicalTest\\obj\\Debug\\net9.0\\scopedcss\\bundle\\TechnicalTest.styles.css"
@@ -668,12 +668,12 @@
       "OriginalItemSpec": "C:\\deni\\dotnet\\TechnicalTest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Identity": "C:\\deni\\dotnet\\TechnicalTest\\obj\\Debug\\net9.0\\compressed\\gte86e62ly-b9sayid5wm.gz",
+      "Identity": "C:\\deni\\dotnet\\TechnicalTest\\obj\\Debug\\net9.0\\compressed\\gte86e62ly-1czkighvec.gz",
       "SourceId": "TechnicalTest",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\deni\\dotnet\\TechnicalTest\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/TechnicalTest",
-      "RelativePath": "css/site#[.{fingerprint=b9sayid5wm}]?.css.gz",
+      "RelativePath": "css/site#[.{fingerprint=1czkighvec}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -682,8 +682,8 @@
       "RelatedAsset": "C:\\deni\\dotnet\\TechnicalTest\\wwwroot\\css\\site.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "0suozzrugb",
-      "Integrity": "0FC1RbVkLkwKhJ1oi+r2Hw4Tm9av6DyJeo95YVvfA3Y=",
+      "Fingerprint": "wgjdglk5dt",
+      "Integrity": "0KeIqo/pZYcvICwaLGDC76mRqJhuwgN6pgdSBC0JpxY=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\deni\\dotnet\\TechnicalTest\\wwwroot\\css\\site.css"
@@ -1277,12 +1277,12 @@
       "OriginalItemSpec": "C:\\deni\\dotnet\\TechnicalTest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Identity": "C:\\deni\\dotnet\\TechnicalTest\\obj\\Debug\\net9.0\\compressed\\xpmlkikqpc-je5l06uk43.gz",
+      "Identity": "C:\\deni\\dotnet\\TechnicalTest\\obj\\Debug\\net9.0\\compressed\\xpmlkikqpc-bi772p8gxu.gz",
       "SourceId": "TechnicalTest",
       "SourceType": "Computed",
       "ContentRoot": "C:\\deni\\dotnet\\TechnicalTest\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/TechnicalTest",
-      "RelativePath": "TechnicalTest#[.{fingerprint=je5l06uk43}]!.bundle.scp.css.gz",
+      "RelativePath": "TechnicalTest#[.{fingerprint=bi772p8gxu}]!.bundle.scp.css.gz",
       "AssetKind": "All",
       "AssetMode": "Reference",
       "AssetRole": "Alternative",
@@ -1291,8 +1291,8 @@
       "RelatedAsset": "C:\\deni\\dotnet\\TechnicalTest\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\TechnicalTest.bundle.scp.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "tnbpvepms1",
-      "Integrity": "SY6jgbvFrt8o+6PrZfuYLmzvclASMHmOuvpJBAGsunk=",
+      "Fingerprint": "1770rvqvgk",
+      "Integrity": "bVtv1y2SWDcCW+FM3I0drCXBOJ7wC0iCIIm3ukUUqSM=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\deni\\dotnet\\TechnicalTest\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\TechnicalTest.bundle.scp.css"
@@ -1375,8 +1375,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ApplicationBundle",
-      "Fingerprint": "je5l06uk43",
-      "Integrity": "ZTmQLm/HAxLmAR9m463klg/7kzKFjuepPfBJp7F681A=",
+      "Fingerprint": "bi772p8gxu",
+      "Integrity": "w+en55Mmmlgj2Ti2nuFGw6JkDrPf25OpheZQSiTuR7w=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\deni\\dotnet\\TechnicalTest\\obj\\Debug\\net9.0\\scopedcss\\bundle\\TechnicalTest.styles.css"
@@ -1396,8 +1396,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ProjectBundle",
-      "Fingerprint": "je5l06uk43",
-      "Integrity": "ZTmQLm/HAxLmAR9m463klg/7kzKFjuepPfBJp7F681A=",
+      "Fingerprint": "bi772p8gxu",
+      "Integrity": "w+en55Mmmlgj2Ti2nuFGw6JkDrPf25OpheZQSiTuR7w=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\deni\\dotnet\\TechnicalTest\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\TechnicalTest.bundle.scp.css"
@@ -1417,8 +1417,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "b9sayid5wm",
-      "Integrity": "j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg=",
+      "Fingerprint": "1czkighvec",
+      "Integrity": "4VGukNIfZJQ9eagsZMe5z9rupy/CRl2jB0fLZDb+DYU=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
@@ -2728,13 +2728,13 @@
   ],
   "Endpoints": [
     {
-      "Route": "css/site.b9sayid5wm.css",
-      "AssetFile": "C:\\deni\\dotnet\\TechnicalTest\\obj\\Debug\\net9.0\\compressed\\gte86e62ly-b9sayid5wm.gz",
+      "Route": "css/site.1czkighvec.css",
+      "AssetFile": "C:\\deni\\dotnet\\TechnicalTest\\obj\\Debug\\net9.0\\compressed\\gte86e62ly-1czkighvec.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.003134796238"
+          "Quality": "0.003067484663"
         }
       ],
       "ResponseHeaders": [
@@ -2744,15 +2744,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "318"
+          "Value": "325"
         },
         {
           "Name": "ETag",
-          "Value": "\"0FC1RbVkLkwKhJ1oi+r2Hw4Tm9av6DyJeo95YVvfA3Y=\""
+          "Value": "\"0KeIqo/pZYcvICwaLGDC76mRqJhuwgN6pgdSBC0JpxY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 23 Apr 2025 01:20:56 GMT"
+          "Value": "Wed, 23 Apr 2025 04:47:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2772,13 +2772,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg=\""
+          "Value": "W/\"4VGukNIfZJQ9eagsZMe5z9rupy/CRl2jB0fLZDb+DYU=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "b9sayid5wm"
+          "Value": "1czkighvec"
         },
         {
           "Name": "label",
@@ -2786,12 +2786,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg="
+          "Value": "sha256-4VGukNIfZJQ9eagsZMe5z9rupy/CRl2jB0fLZDb+DYU="
         }
       ]
     },
     {
-      "Route": "css/site.b9sayid5wm.css",
+      "Route": "css/site.1czkighvec.css",
       "AssetFile": "C:\\deni\\dotnet\\TechnicalTest\\wwwroot\\css\\site.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -2801,7 +2801,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "667"
+          "Value": "677"
         },
         {
           "Name": "Content-Type",
@@ -2809,11 +2809,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg=\""
+          "Value": "\"4VGukNIfZJQ9eagsZMe5z9rupy/CRl2jB0fLZDb+DYU=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 23 Apr 2025 01:20:56 GMT"
+          "Value": "Wed, 23 Apr 2025 04:47:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2823,7 +2823,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "b9sayid5wm"
+          "Value": "1czkighvec"
         },
         {
           "Name": "label",
@@ -2831,13 +2831,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg="
+          "Value": "sha256-4VGukNIfZJQ9eagsZMe5z9rupy/CRl2jB0fLZDb+DYU="
         }
       ]
     },
     {
-      "Route": "css/site.b9sayid5wm.css.gz",
-      "AssetFile": "C:\\deni\\dotnet\\TechnicalTest\\obj\\Debug\\net9.0\\compressed\\gte86e62ly-b9sayid5wm.gz",
+      "Route": "css/site.1czkighvec.css.gz",
+      "AssetFile": "C:\\deni\\dotnet\\TechnicalTest\\obj\\Debug\\net9.0\\compressed\\gte86e62ly-1czkighvec.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2846,7 +2846,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "318"
+          "Value": "325"
         },
         {
           "Name": "Content-Type",
@@ -2854,11 +2854,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"0FC1RbVkLkwKhJ1oi+r2Hw4Tm9av6DyJeo95YVvfA3Y=\""
+          "Value": "\"0KeIqo/pZYcvICwaLGDC76mRqJhuwgN6pgdSBC0JpxY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 23 Apr 2025 01:20:56 GMT"
+          "Value": "Wed, 23 Apr 2025 04:47:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2876,7 +2876,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "b9sayid5wm"
+          "Value": "1czkighvec"
         },
         {
           "Name": "label",
@@ -2884,18 +2884,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-0FC1RbVkLkwKhJ1oi+r2Hw4Tm9av6DyJeo95YVvfA3Y="
+          "Value": "sha256-0KeIqo/pZYcvICwaLGDC76mRqJhuwgN6pgdSBC0JpxY="
         }
       ]
     },
     {
       "Route": "css/site.css",
-      "AssetFile": "C:\\deni\\dotnet\\TechnicalTest\\obj\\Debug\\net9.0\\compressed\\gte86e62ly-b9sayid5wm.gz",
+      "AssetFile": "C:\\deni\\dotnet\\TechnicalTest\\obj\\Debug\\net9.0\\compressed\\gte86e62ly-1czkighvec.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.003134796238"
+          "Quality": "0.003067484663"
         }
       ],
       "ResponseHeaders": [
@@ -2905,15 +2905,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "318"
+          "Value": "325"
         },
         {
           "Name": "ETag",
-          "Value": "\"0FC1RbVkLkwKhJ1oi+r2Hw4Tm9av6DyJeo95YVvfA3Y=\""
+          "Value": "\"0KeIqo/pZYcvICwaLGDC76mRqJhuwgN6pgdSBC0JpxY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 23 Apr 2025 01:20:56 GMT"
+          "Value": "Wed, 23 Apr 2025 04:47:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2933,13 +2933,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg=\""
+          "Value": "W/\"4VGukNIfZJQ9eagsZMe5z9rupy/CRl2jB0fLZDb+DYU=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg="
+          "Value": "sha256-4VGukNIfZJQ9eagsZMe5z9rupy/CRl2jB0fLZDb+DYU="
         }
       ]
     },
@@ -2954,7 +2954,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "667"
+          "Value": "677"
         },
         {
           "Name": "Content-Type",
@@ -2962,11 +2962,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg=\""
+          "Value": "\"4VGukNIfZJQ9eagsZMe5z9rupy/CRl2jB0fLZDb+DYU=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 23 Apr 2025 01:20:56 GMT"
+          "Value": "Wed, 23 Apr 2025 04:47:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2976,13 +2976,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-j6fhJSuuyLpOSLuPJU0TsDV0iNjor5S3rDnvxJrt4bg="
+          "Value": "sha256-4VGukNIfZJQ9eagsZMe5z9rupy/CRl2jB0fLZDb+DYU="
         }
       ]
     },
     {
       "Route": "css/site.css.gz",
-      "AssetFile": "C:\\deni\\dotnet\\TechnicalTest\\obj\\Debug\\net9.0\\compressed\\gte86e62ly-b9sayid5wm.gz",
+      "AssetFile": "C:\\deni\\dotnet\\TechnicalTest\\obj\\Debug\\net9.0\\compressed\\gte86e62ly-1czkighvec.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2991,7 +2991,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "318"
+          "Value": "325"
         },
         {
           "Name": "Content-Type",
@@ -2999,11 +2999,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"0FC1RbVkLkwKhJ1oi+r2Hw4Tm9av6DyJeo95YVvfA3Y=\""
+          "Value": "\"0KeIqo/pZYcvICwaLGDC76mRqJhuwgN6pgdSBC0JpxY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 23 Apr 2025 01:20:56 GMT"
+          "Value": "Wed, 23 Apr 2025 04:47:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3021,7 +3021,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-0FC1RbVkLkwKhJ1oi+r2Hw4Tm9av6DyJeo95YVvfA3Y="
+          "Value": "sha256-0KeIqo/pZYcvICwaLGDC76mRqJhuwgN6pgdSBC0JpxY="
         }
       ]
     },
@@ -21286,13 +21286,13 @@
       ]
     },
     {
-      "Route": "TechnicalTest.bundle.scp.css",
-      "AssetFile": "C:\\deni\\dotnet\\TechnicalTest\\obj\\Debug\\net9.0\\compressed\\xpmlkikqpc-je5l06uk43.gz",
+      "Route": "TechnicalTest.bi772p8gxu.bundle.scp.css",
+      "AssetFile": "C:\\deni\\dotnet\\TechnicalTest\\obj\\Debug\\net9.0\\compressed\\xpmlkikqpc-bi772p8gxu.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.001845018450"
+          "Quality": "0.001908396947"
         }
       ],
       "ResponseHeaders": [
@@ -21302,19 +21302,19 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "541"
+          "Value": "523"
         },
         {
           "Name": "ETag",
-          "Value": "\"SY6jgbvFrt8o+6PrZfuYLmzvclASMHmOuvpJBAGsunk=\""
+          "Value": "\"bVtv1y2SWDcCW+FM3I0drCXBOJ7wC0iCIIm3ukUUqSM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 23 Apr 2025 01:21:44 GMT"
+          "Value": "Wed, 23 Apr 2025 09:51:23 GMT"
         },
         {
           "Name": "Cache-Control",
-          "Value": "no-cache"
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Encoding",
@@ -21330,18 +21330,26 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"ZTmQLm/HAxLmAR9m463klg/7kzKFjuepPfBJp7F681A=\""
+          "Value": "W/\"w+en55Mmmlgj2Ti2nuFGw6JkDrPf25OpheZQSiTuR7w=\""
         }
       ],
       "EndpointProperties": [
         {
+          "Name": "fingerprint",
+          "Value": "bi772p8gxu"
+        },
+        {
+          "Name": "label",
+          "Value": "TechnicalTest.bundle.scp.css"
+        },
+        {
           "Name": "integrity",
-          "Value": "sha256-ZTmQLm/HAxLmAR9m463klg/7kzKFjuepPfBJp7F681A="
+          "Value": "sha256-w+en55Mmmlgj2Ti2nuFGw6JkDrPf25OpheZQSiTuR7w="
         }
       ]
     },
     {
-      "Route": "TechnicalTest.bundle.scp.css",
+      "Route": "TechnicalTest.bi772p8gxu.bundle.scp.css",
       "AssetFile": "C:\\deni\\dotnet\\TechnicalTest\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\TechnicalTest.bundle.scp.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -21351,7 +21359,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1131"
+          "Value": "997"
         },
         {
           "Name": "Content-Type",
@@ -21359,121 +21367,21 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"ZTmQLm/HAxLmAR9m463klg/7kzKFjuepPfBJp7F681A=\""
+          "Value": "\"w+en55Mmmlgj2Ti2nuFGw6JkDrPf25OpheZQSiTuR7w=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 23 Apr 2025 01:21:44 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-ZTmQLm/HAxLmAR9m463klg/7kzKFjuepPfBJp7F681A="
-        }
-      ]
-    },
-    {
-      "Route": "TechnicalTest.bundle.scp.css.gz",
-      "AssetFile": "C:\\deni\\dotnet\\TechnicalTest\\obj\\Debug\\net9.0\\compressed\\xpmlkikqpc-je5l06uk43.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "541"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"SY6jgbvFrt8o+6PrZfuYLmzvclASMHmOuvpJBAGsunk=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 23 Apr 2025 01:21:44 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-SY6jgbvFrt8o+6PrZfuYLmzvclASMHmOuvpJBAGsunk="
-        }
-      ]
-    },
-    {
-      "Route": "TechnicalTest.je5l06uk43.bundle.scp.css",
-      "AssetFile": "C:\\deni\\dotnet\\TechnicalTest\\obj\\Debug\\net9.0\\compressed\\xpmlkikqpc-je5l06uk43.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.001845018450"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "541"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"SY6jgbvFrt8o+6PrZfuYLmzvclASMHmOuvpJBAGsunk=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 23 Apr 2025 01:21:44 GMT"
+          "Value": "Wed, 23 Apr 2025 09:51:23 GMT"
         },
         {
           "Name": "Cache-Control",
           "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"ZTmQLm/HAxLmAR9m463klg/7kzKFjuepPfBJp7F681A=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "je5l06uk43"
+          "Value": "bi772p8gxu"
         },
         {
           "Name": "label",
@@ -21481,13 +21389,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-ZTmQLm/HAxLmAR9m463klg/7kzKFjuepPfBJp7F681A="
+          "Value": "sha256-w+en55Mmmlgj2Ti2nuFGw6JkDrPf25OpheZQSiTuR7w="
         }
       ]
     },
     {
-      "Route": "TechnicalTest.je5l06uk43.bundle.scp.css",
-      "AssetFile": "C:\\deni\\dotnet\\TechnicalTest\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\TechnicalTest.bundle.scp.css",
+      "Route": "TechnicalTest.bi772p8gxu.bundle.scp.css.gz",
+      "AssetFile": "C:\\deni\\dotnet\\TechnicalTest\\obj\\Debug\\net9.0\\compressed\\xpmlkikqpc-bi772p8gxu.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -21496,7 +21404,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1131"
+          "Value": "523"
         },
         {
           "Name": "Content-Type",
@@ -21504,56 +21412,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"ZTmQLm/HAxLmAR9m463klg/7kzKFjuepPfBJp7F681A=\""
+          "Value": "\"bVtv1y2SWDcCW+FM3I0drCXBOJ7wC0iCIIm3ukUUqSM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 23 Apr 2025 01:21:44 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "je5l06uk43"
-        },
-        {
-          "Name": "label",
-          "Value": "TechnicalTest.bundle.scp.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-ZTmQLm/HAxLmAR9m463klg/7kzKFjuepPfBJp7F681A="
-        }
-      ]
-    },
-    {
-      "Route": "TechnicalTest.je5l06uk43.bundle.scp.css.gz",
-      "AssetFile": "C:\\deni\\dotnet\\TechnicalTest\\obj\\Debug\\net9.0\\compressed\\xpmlkikqpc-je5l06uk43.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "541"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"SY6jgbvFrt8o+6PrZfuYLmzvclASMHmOuvpJBAGsunk=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 23 Apr 2025 01:21:44 GMT"
+          "Value": "Wed, 23 Apr 2025 09:51:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -21571,7 +21434,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "je5l06uk43"
+          "Value": "bi772p8gxu"
         },
         {
           "Name": "label",
@@ -21579,18 +21442,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-SY6jgbvFrt8o+6PrZfuYLmzvclASMHmOuvpJBAGsunk="
+          "Value": "sha256-bVtv1y2SWDcCW+FM3I0drCXBOJ7wC0iCIIm3ukUUqSM="
         }
       ]
     },
     {
-      "Route": "TechnicalTest.je5l06uk43.styles.css",
-      "AssetFile": "C:\\deni\\dotnet\\TechnicalTest\\obj\\Debug\\net9.0\\compressed\\7jl32redzq-je5l06uk43.gz",
+      "Route": "TechnicalTest.bi772p8gxu.styles.css",
+      "AssetFile": "C:\\deni\\dotnet\\TechnicalTest\\obj\\Debug\\net9.0\\compressed\\7jl32redzq-bi772p8gxu.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.001845018450"
+          "Quality": "0.001908396947"
         }
       ],
       "ResponseHeaders": [
@@ -21600,15 +21463,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "541"
+          "Value": "523"
         },
         {
           "Name": "ETag",
-          "Value": "\"SY6jgbvFrt8o+6PrZfuYLmzvclASMHmOuvpJBAGsunk=\""
+          "Value": "\"bVtv1y2SWDcCW+FM3I0drCXBOJ7wC0iCIIm3ukUUqSM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 23 Apr 2025 01:21:44 GMT"
+          "Value": "Wed, 23 Apr 2025 09:51:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -21628,13 +21491,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"ZTmQLm/HAxLmAR9m463klg/7kzKFjuepPfBJp7F681A=\""
+          "Value": "W/\"w+en55Mmmlgj2Ti2nuFGw6JkDrPf25OpheZQSiTuR7w=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "je5l06uk43"
+          "Value": "bi772p8gxu"
         },
         {
           "Name": "label",
@@ -21642,12 +21505,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-ZTmQLm/HAxLmAR9m463klg/7kzKFjuepPfBJp7F681A="
+          "Value": "sha256-w+en55Mmmlgj2Ti2nuFGw6JkDrPf25OpheZQSiTuR7w="
         }
       ]
     },
     {
-      "Route": "TechnicalTest.je5l06uk43.styles.css",
+      "Route": "TechnicalTest.bi772p8gxu.styles.css",
       "AssetFile": "C:\\deni\\dotnet\\TechnicalTest\\obj\\Debug\\net9.0\\scopedcss\\bundle\\TechnicalTest.styles.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -21657,7 +21520,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1131"
+          "Value": "997"
         },
         {
           "Name": "Content-Type",
@@ -21665,11 +21528,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"ZTmQLm/HAxLmAR9m463klg/7kzKFjuepPfBJp7F681A=\""
+          "Value": "\"w+en55Mmmlgj2Ti2nuFGw6JkDrPf25OpheZQSiTuR7w=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 23 Apr 2025 01:21:44 GMT"
+          "Value": "Wed, 23 Apr 2025 09:51:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -21679,7 +21542,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "je5l06uk43"
+          "Value": "bi772p8gxu"
         },
         {
           "Name": "label",
@@ -21687,13 +21550,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-ZTmQLm/HAxLmAR9m463klg/7kzKFjuepPfBJp7F681A="
+          "Value": "sha256-w+en55Mmmlgj2Ti2nuFGw6JkDrPf25OpheZQSiTuR7w="
         }
       ]
     },
     {
-      "Route": "TechnicalTest.je5l06uk43.styles.css.gz",
-      "AssetFile": "C:\\deni\\dotnet\\TechnicalTest\\obj\\Debug\\net9.0\\compressed\\7jl32redzq-je5l06uk43.gz",
+      "Route": "TechnicalTest.bi772p8gxu.styles.css.gz",
+      "AssetFile": "C:\\deni\\dotnet\\TechnicalTest\\obj\\Debug\\net9.0\\compressed\\7jl32redzq-bi772p8gxu.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -21702,7 +21565,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "541"
+          "Value": "523"
         },
         {
           "Name": "Content-Type",
@@ -21710,11 +21573,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"SY6jgbvFrt8o+6PrZfuYLmzvclASMHmOuvpJBAGsunk=\""
+          "Value": "\"bVtv1y2SWDcCW+FM3I0drCXBOJ7wC0iCIIm3ukUUqSM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 23 Apr 2025 01:21:44 GMT"
+          "Value": "Wed, 23 Apr 2025 09:51:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -21732,7 +21595,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "je5l06uk43"
+          "Value": "bi772p8gxu"
         },
         {
           "Name": "label",
@@ -21740,18 +21603,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-SY6jgbvFrt8o+6PrZfuYLmzvclASMHmOuvpJBAGsunk="
+          "Value": "sha256-bVtv1y2SWDcCW+FM3I0drCXBOJ7wC0iCIIm3ukUUqSM="
         }
       ]
     },
     {
-      "Route": "TechnicalTest.styles.css",
-      "AssetFile": "C:\\deni\\dotnet\\TechnicalTest\\obj\\Debug\\net9.0\\compressed\\7jl32redzq-je5l06uk43.gz",
+      "Route": "TechnicalTest.bundle.scp.css",
+      "AssetFile": "C:\\deni\\dotnet\\TechnicalTest\\obj\\Debug\\net9.0\\compressed\\xpmlkikqpc-bi772p8gxu.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.001845018450"
+          "Quality": "0.001908396947"
         }
       ],
       "ResponseHeaders": [
@@ -21761,15 +21624,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "541"
+          "Value": "523"
         },
         {
           "Name": "ETag",
-          "Value": "\"SY6jgbvFrt8o+6PrZfuYLmzvclASMHmOuvpJBAGsunk=\""
+          "Value": "\"bVtv1y2SWDcCW+FM3I0drCXBOJ7wC0iCIIm3ukUUqSM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 23 Apr 2025 01:21:44 GMT"
+          "Value": "Wed, 23 Apr 2025 09:51:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -21789,13 +21652,150 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"ZTmQLm/HAxLmAR9m463klg/7kzKFjuepPfBJp7F681A=\""
+          "Value": "W/\"w+en55Mmmlgj2Ti2nuFGw6JkDrPf25OpheZQSiTuR7w=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-ZTmQLm/HAxLmAR9m463klg/7kzKFjuepPfBJp7F681A="
+          "Value": "sha256-w+en55Mmmlgj2Ti2nuFGw6JkDrPf25OpheZQSiTuR7w="
+        }
+      ]
+    },
+    {
+      "Route": "TechnicalTest.bundle.scp.css",
+      "AssetFile": "C:\\deni\\dotnet\\TechnicalTest\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\TechnicalTest.bundle.scp.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "997"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"w+en55Mmmlgj2Ti2nuFGw6JkDrPf25OpheZQSiTuR7w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 23 Apr 2025 09:51:23 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-w+en55Mmmlgj2Ti2nuFGw6JkDrPf25OpheZQSiTuR7w="
+        }
+      ]
+    },
+    {
+      "Route": "TechnicalTest.bundle.scp.css.gz",
+      "AssetFile": "C:\\deni\\dotnet\\TechnicalTest\\obj\\Debug\\net9.0\\compressed\\xpmlkikqpc-bi772p8gxu.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "523"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"bVtv1y2SWDcCW+FM3I0drCXBOJ7wC0iCIIm3ukUUqSM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 23 Apr 2025 09:51:23 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-bVtv1y2SWDcCW+FM3I0drCXBOJ7wC0iCIIm3ukUUqSM="
+        }
+      ]
+    },
+    {
+      "Route": "TechnicalTest.styles.css",
+      "AssetFile": "C:\\deni\\dotnet\\TechnicalTest\\obj\\Debug\\net9.0\\compressed\\7jl32redzq-bi772p8gxu.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001908396947"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "523"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"bVtv1y2SWDcCW+FM3I0drCXBOJ7wC0iCIIm3ukUUqSM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 23 Apr 2025 09:51:23 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"w+en55Mmmlgj2Ti2nuFGw6JkDrPf25OpheZQSiTuR7w=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-w+en55Mmmlgj2Ti2nuFGw6JkDrPf25OpheZQSiTuR7w="
         }
       ]
     },
@@ -21810,7 +21810,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1131"
+          "Value": "997"
         },
         {
           "Name": "Content-Type",
@@ -21818,11 +21818,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"ZTmQLm/HAxLmAR9m463klg/7kzKFjuepPfBJp7F681A=\""
+          "Value": "\"w+en55Mmmlgj2Ti2nuFGw6JkDrPf25OpheZQSiTuR7w=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 23 Apr 2025 01:21:44 GMT"
+          "Value": "Wed, 23 Apr 2025 09:51:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -21832,13 +21832,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-ZTmQLm/HAxLmAR9m463klg/7kzKFjuepPfBJp7F681A="
+          "Value": "sha256-w+en55Mmmlgj2Ti2nuFGw6JkDrPf25OpheZQSiTuR7w="
         }
       ]
     },
     {
       "Route": "TechnicalTest.styles.css.gz",
-      "AssetFile": "C:\\deni\\dotnet\\TechnicalTest\\obj\\Debug\\net9.0\\compressed\\7jl32redzq-je5l06uk43.gz",
+      "AssetFile": "C:\\deni\\dotnet\\TechnicalTest\\obj\\Debug\\net9.0\\compressed\\7jl32redzq-bi772p8gxu.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -21847,7 +21847,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "541"
+          "Value": "523"
         },
         {
           "Name": "Content-Type",
@@ -21855,11 +21855,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"SY6jgbvFrt8o+6PrZfuYLmzvclASMHmOuvpJBAGsunk=\""
+          "Value": "\"bVtv1y2SWDcCW+FM3I0drCXBOJ7wC0iCIIm3ukUUqSM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 23 Apr 2025 01:21:44 GMT"
+          "Value": "Wed, 23 Apr 2025 09:51:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -21877,7 +21877,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-SY6jgbvFrt8o+6PrZfuYLmzvclASMHmOuvpJBAGsunk="
+          "Value": "sha256-bVtv1y2SWDcCW+FM3I0drCXBOJ7wC0iCIIm3ukUUqSM="
         }
       ]
     }
