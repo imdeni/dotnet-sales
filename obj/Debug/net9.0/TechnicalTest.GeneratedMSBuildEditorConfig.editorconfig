@@ -48,6 +48,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU29PcmRlclxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/deni/dotnet/TechnicalTest/Views/SoOrder/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU29PcmRlclxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/deni/dotnet/TechnicalTest/Views/SoOrder/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU29PcmRlclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

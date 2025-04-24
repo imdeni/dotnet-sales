@@ -72,8 +72,11 @@
             <td class="p-3 border border-gray-300">@(i + 1)</td>
             <td class="p-3 border border-gray-300">
                 <div class="gap-6 flex justify-center items-center">
-                <a href="#" class="text-blue-600 hover:text-blue-800">✏️</a>
-                <a href="#" class="text-red-600 hover:text-red-800">🗑️</a>
+                <a href="@Url.Action("Edit", "SoOrder", new { id = Model.Orders[i].SoOrderId })" class="text-blue-600 hover:text-blue-800">✏️</a>
+                <a href="@Url.Action("Delete", "SoOrder", new { id = Model.Orders[i].SoOrderId })" 
+                onclick="return confirm('Yakin mau hapus order?');"
+                class="text-red-600 hover:text-red-800">🗑️</a>
+
                 </div>
             </td>
             <td class="p-3 border border-gray-300">@Model.Orders[i].OrderNo</td>
@@ -122,3 +125,39 @@
 
     </div>
 </div>
+
+<div id="alertModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 hidden">
+    <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-sm">
+        <h2 id="alertTitle" class="text-lg font-semibold mb-2 text-center"></h2>
+        <p id="alertMessage" class="text-gray-700 text-center"></p>
+        <div class="mt-4 flex justify-center">
+            <button onclick="closeAlert()" class="px-4 py-2 bg-blue-700 text-white rounded hover:bg-blue-900">
+                OK
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function showAlert(title, message) {
+        document.getElementById('alertTitle').textContent = title;
+        document.getElementById('alertMessage').textContent = message;
+        document.getElementById('alertModal').classList.remove('hidden');
+    }
+
+    function closeAlert() {
+        document.getElementById('alertModal').classList.add('hidden');
+    }
+
+    window.onload = function () {
+        const success = '@TempData["SuccessMessage"]';
+        const error = '@TempData["ErrorMessage"]';
+
+        if (success && success !== '') {
+            showAlert('Success', success);
+        } else if (error && error !== '') {
+            showAlert('Error', error);
+        }
+    };
+</script>
+

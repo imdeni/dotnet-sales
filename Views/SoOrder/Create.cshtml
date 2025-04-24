@@ -124,10 +124,16 @@
                 <button onclick="saveRow()" class="text-blue-600 hover:underline text-xs">
                     <span class="text-lg">💾</span>
                 </button>
-            </td>
-            <td class="border px-3 py-1"><input type="text" class="w-full p-1 border border-black rounded" id="itemName"></td>
-            <td class="border px-3 py-1"><input type="number" class="w-full p-1 border border-black rounded" id="itemQty" oninput="calculateRowTotal()"></td>
-            <td class="border px-3 py-1"><input type="number" class="w-full p-1 border border-black rounded" id="itemPrice" oninput="calculateRowTotal()"></td>
+            </td><td class="border px-3 py-1">
+  <input type="text" class="w-full p-1 border border-black rounded" id="itemName" required>
+</td>
+<td class="border px-3 py-1">
+  <input type="number" class="w-full p-1 border border-black rounded" id="itemQty" oninput="calculateRowTotal()" required>
+</td>
+<td class="border px-3 py-1">
+  <input type="number" class="w-full p-1 border border-black rounded" id="itemPrice" oninput="calculateRowTotal()" required>
+</td>
+
             <td class="border px-3 py-1 text-right" id="itemTotal">0.00</td>
         `;
         tbody.appendChild(row);

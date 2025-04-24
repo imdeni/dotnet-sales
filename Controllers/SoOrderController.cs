@@ -166,6 +166,123 @@ public class SoOrderController : Controller
             "SalesOrders.xlsx");
     }
 
+    [HttpGet]
+    public async Task<IActionResult> Delete(int id)
+    {
+        var order = await _context.SoOrders
+            .Include(o => o.SoItems)
+            .FirstOrDefaultAsync(o => o.SoOrderId == id);
 
+        if (order == null)
+        {
+            return NotFound();
+        }
 
+        using var transaction = await _context.Database.BeginTransactionAsync();
+        try
+        {
+            if (order.SoItems != null && order.SoItems.Any())
+            {
+                _context.SoItems.RemoveRange(order.SoItems);
+            }
+
+            _context.SoOrders.Remove(order);
+            await _context.SaveChangesAsync();
+            await transaction.CommitAsync();
+
+            TempData["SuccessMessage"] = "Sales order berhasil di hapus.";
+            return RedirectToAction("Index");
+        }
+        catch (Exception ex)
+        {
+            await transaction.RollbackAsync();
+            TempData["ErrorMessage"] = "Gagal hapus sales order.";
+            return RedirectToAction("Index");
+        }
+    }
+
+    public IActionResult Edit(long id)
+    {
+        var soOrder = _context.SoOrders
+            .Include(s => s.ComCustomer)
+            .Include(s => s.SoItems)
+            .FirstOrDefault(s => s.SoOrderId == id);
+
+        if (soOrder == null)
+        {
+            return NotFound();
+        }
+
+        var viewModel = new SoOrderViewModel
+        {
+            SoOrder = soOrder,
+            Customers = GetCustomers()
+        };
+
+        return View(viewModel);
+    }
+
+    private List<SelectListItem> GetCustomers()
+    {
+        return _context.ComCustomers
+            .Select(c => new SelectListItem
+            {
+                Value = c.ComCustomerId.ToString(),
+                Text = c.CustomerName
+            }).ToList();
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> Edit([FromBody] SoOrderModel model)
+    {
+
+        var existingOrder = await _context.SoOrders.FindAsync(model.SoOrderId);
+        if (existingOrder == null)
+        {
+            return NotFound(new { success = false, message = "Order not found" });
+        }
+
+        existingOrder.OrderNo = model.OrderNo;
+        existingOrder.OrderDate = model.OrderDate;
+        existingOrder.ComCustomerId = model.ComCustomerId;
+        existingOrder.Address = model.Address;
+
+        _context.SoOrders.Update(existingOrder);
+        await _context.SaveChangesAsync();
+
+        return Ok(new { success = true, message = "Order updated successfully" });
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> SaveItem([FromBody] SoItemModel item)
+    {
+
+        try
+        {
+            var order = await _context.SoOrders
+                .FirstOrDefaultAsync(o => o.SoOrderId == item.SoOrderId);
+
+            if (order == null)
+            {
+                return Json(new { success = false, message = "Sales order not found." });
+            }
+
+            var soItem = new SoItemModel
+            {
+                SoOrderId = item.SoOrderId,
+                ItemName = item.ItemName,
+                Quantity = item.Quantity,
+                Price = item.Price
+            };
+
+            _context.SoItems.Add(soItem);
+            await _context.SaveChangesAsync();
+
+            return Json(new { success = true, message = "Item saved successfully." });
+        }
+        catch (Exception ex)
+        {
+            return Json(new { success = false, message = "An error occurred while saving the item." });
+        }
+    }
 }

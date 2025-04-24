@@ -1,0 +1,363 @@
+@model SoOrderViewModel
+
+<form asp-action="Edit" asp-route-id="@Model.SoOrder.SoOrderId" method="post" id="salesOrderForm" class="pb-16">
+    @Html.AntiForgeryToken()
+
+    <div class="px-8 p-4 bg-gradient-to-r from-blue-500 to-blue-900 text-white text-lg font-semibold rounded-t-md shadow">
+        EDIT - SALES ORDER
+    </div>
+    <div class="py-2 text-md bg-blue-900 font-semibold text-white text-center border-b border-gray-300 mt-2">Sales Order Information</div>
+
+    <div class="px-8 py-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 mt-2">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <label for="SoNo" class="block text-sm font-medium text-gray-700">Sales Order Number *</label>
+                <input type="text" id="SoNo" name="SoOrder.OrderNo" value="@Model.SoOrder.OrderNo"
+                       class="h-8 p-2 pl-3 pr-10 border border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 w-full" required>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <label for="ComCustomerId" class="block text-sm font-medium text-gray-700">Customer</label>
+                <select id="ComCustomerId" name="SoOrder.ComCustomerId"
+                        class="h-8 pt-1 p-2 pl-3 pr-10 border border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 w-full text-sm"
+                        required>
+                    <option value="">Select Customer</option>
+                    @foreach (var customer in Model.Customers)
+                    {
+                        if (customer.Value == Model.SoOrder.ComCustomerId.ToString())
+                        {
+                            <option value="@customer.Value" selected>@customer.Text</option>
+                        }
+                        else
+                        {
+                            <option value="@customer.Value">@customer.Text</option>
+                        }
+                    }
+                </select>
+            </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 mt-2">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <label for="SoDate" class="block text-sm font-medium text-gray-700">Order Date *</label>
+                <input name="SoOrder.OrderDate" id="SoDate" type="date" value="@Model.SoOrder.OrderDate.ToString("yyyy-MM-dd")"
+                       class="h-8 p-2 pl-3 pr-10 border border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 w-full" />
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
+                <label for="Address" class="block text-sm font-medium text-gray-700">Address</label>
+                <textarea id="Address" name="SoOrder.Address" rows="4"
+                          class="h-24 p-2 pl-3 pr-10 border border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 w-full"
+                          >@Model.SoOrder.Address</textarea>
+            </div>
+        </div>
+    </div>
+
+    <div class="py-2 text-md bg-blue-900 font-semibold text-white text-center border-b border-gray-300 mt-2">Detail Item Information</div>
+
+    <div class="px-8 py-2">
+        <div class="overflow-x-auto">
+            <button type="button" onclick="addItemRow()" class="bg-red-900 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm">Add Item</button>
+
+            <table class="mt-2 min-w-full table-auto text-sm border border-white-300 rounded">
+                <thead class="bg-gray-100 text-white bg-blue-900">
+                    <tr class="text-left">
+                        <th class="px-3 py-2 border">No</th>
+                        <th class="px-3 py-2 border">ACTION</th>
+                        <th class="px-3 py-2 border">ITEM NAME</th>
+                        <th class="px-3 py-2 border">QTY</th>
+                        <th class="px-3 py-2 border">PRICE</th>
+                        <th class="px-3 py-2 border">TOTAL</th>
+                    </tr>
+                </thead>
+                <tbody id="itemTableBody" class="bg-white">
+                    @for (int i = 0; i < Model.SoOrder.SoItems.Count; i++)
+                    {
+                        var item = Model.SoOrder.SoItems.ElementAt(i);
+                        <tr id="row-@i">
+                            <td class="border px-3 py-1">@(i + 1)</td>
+                            <td class="border px-3 py-1 text-center">
+                                <button type="button" onclick="editItem(@i,@item.SoItemId)" class="text-blue-600 hover:underline text-xs">
+                                    <span class="text-base">✏️</span>
+                                </button>
+                                <button type="button" onclick="deleteItem(@item.SoItemId)" class="text-red-600 hover:underline text-xs">
+                                    <span class="text-base">🗑️</span>
+                                </button>
+                            </td>
+                            <td class="border px-3 py-1" id="itemName-@i">@item.ItemName</td>
+                            <td class="border px-3 py-1 text-right" id="itemQty-@i">@item.Quantity</td>
+                            <td class="border px-3 py-1 text-right" id="itemPrice-@i">@item.Price</td>
+                            <td class="border px-3 py-1 text-right" id="itemTotal-@i">@(item.Quantity * item.Price)</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div>
+
+        <div class="flex justify-end text-sm font-medium bg-white py-2 pr-32">
+            <div class="space-x-4">
+                <span>Total item: <span id="totalItems" class="pr-16">0</span></span>
+                <span>Total amount: <span id="totalAmount" class="pr-16">0.00</span></span>
+            </div>
+        </div>
+
+        <div class="flex justify-end mt-6 space-x-4 justify-center">
+            <button type="button" onclick="saveGlobal()" class="bg-red-900 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm">Save</button>
+            <button type="button" onclick="window.location.href='/'" class="bg-blue-900 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm">Cancel</button>
+        </div>
+    </div>
+</form>
+
+<script>
+    let itemIndex = @Model.SoOrder.SoItems.Count;
+    const items = @Html.Raw(Json.Serialize(Model.SoOrder.SoItems.Select(i => new {
+        itemName = i.ItemName,
+        qty = i.Quantity,
+        price = i.Price,
+        total = i.Quantity * i.Price
+    })));
+    let hasInputRow = false;
+    
+    updateSummary();
+
+    function addItemRow() {
+        if (hasInputRow) {
+            alert("Please save or remove the current input before adding a new one.");
+            return;
+        }
+
+        const tbody = document.getElementById("itemTableBody");
+        const row = document.createElement("tr");
+        row.setAttribute("id", `inputRow`);
+
+        row.innerHTML = `
+            <td class="border px-3 py-1">-</td>
+            <td class="border px-3 py-1 text-center">
+                <div onclick="saveRow()" class="text-blue-600 hover:underline text-xs">
+                    <span class="text-lg">💾</span>
+                </div>
+                <button onclick="removeInputRow()" class="text-red-600 hover:underline text-xs">
+                    <span class="text-base">❌</span>
+                </button>
+            </td>
+            <td class="border px-3 py-1"><input type="text" class="w-full p-1 border border-black rounded" id="itemName"></td>
+            <td class="border px-3 py-1"><input type="number" class="w-full p-1 border border-black rounded" id="itemQty" oninput="calculateRowTotal()"></td>
+            <td class="border px-3 py-1"><input type="number" class="w-full p-1 border border-black rounded" id="itemPrice" oninput="calculateRowTotal()"></td>
+            <td class="border px-3 py-1 text-right" id="itemTotal">0.00</td>
+        `;
+        tbody.appendChild(row);
+        hasInputRow = true;
+        document.getElementById("itemName").focus();
+    }
+
+    function calculateRowTotal() {
+        const qty = parseFloat(document.getElementById("itemQty").value) || 0;
+        const price = parseFloat(document.getElementById("itemPrice").value) || 0;
+        const total = qty * price;
+        document.getElementById("itemTotal").innerText = total.toFixed(2);
+    }
+
+    function removeRow(index) {
+        items.splice(index, 1);
+        document.getElementById(`row-${index}`).remove();
+        updateSummary();
+    }
+
+    function removeInputRow() {
+        const row = document.getElementById("inputRow");
+        if (row) row.remove();
+        hasInputRow = false;
+    }
+
+
+    function updateSummary() {
+        const totalItems = items.reduce((sum, item) => sum + item.qty, 0);
+        const totalAmount = items.reduce((sum, item) => sum + item.total, 0);
+        document.getElementById("totalItems").innerText = totalItems;
+        document.getElementById("totalAmount").innerText = totalAmount.toLocaleString(undefined, { minimumFractionDigits: 2 });
+    }
+
+    function saveGlobal() {
+        const soNo = document.getElementById("SoNo").value.trim();
+        const soDate = document.getElementById("SoDate").value.trim();
+        const customerId = document.getElementById("ComCustomerId").value;
+        const Address = document.getElementById("Address").value.trim();
+
+        if (!soNo || !soDate || customerId === "Select Customer") {
+            alert("Please fill all Sales Order fields before saving.");
+            return;
+        }
+
+        const data = {
+            SoOrderId: @Model.SoOrder.SoOrderId,
+                OrderNo: soNo,
+                OrderDate: soDate,
+                ComCustomerId: parseInt(customerId, 10),
+                Address: Address,
+        }
+
+        fetch(`/SoOrder/Edit/${data.SoOrderId}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(res => res.json())
+        .then(data => {
+            if (data.success) {
+                alert("Order updated!");
+            } else {
+                console.error(data.message);
+            }
+        });        
+    }
+
+    function editItem(index,id) {
+        const itemName = document.getElementById(`itemName-${index}`);
+        const itemQty = document.getElementById(`itemQty-${index}`);
+        const itemPrice = document.getElementById(`itemPrice-${index}`);
+
+        itemName.innerHTML = `<input type="text" value="${itemName.innerText}" id="editItemName-${index}" class="w-full p-1 border border-black rounded" />`;
+        itemQty.innerHTML = `<input type="number" value="${itemQty.innerText}" id="editItemQty-${index}" class="w-full p-1 border border-black rounded" />`;
+        itemPrice.innerHTML = `<input type="number" value="${itemPrice.innerText}" id="editItemPrice-${index}" class="w-full p-1 border border-black rounded" />`;
+
+        const actionBtns = document.querySelector(`#row-${index} td:nth-child(2)`);
+        actionBtns.innerHTML = `
+            <button type="button" onclick="saveItem(${index},${id})" class="text-green-600 hover:underline text-xs">
+                <span class="text-base">💾</span>
+            </button>
+            <button type="button" onclick="cancelEdit(${index})" class="text-yellow-600 hover:underline text-xs">
+                <span class="text-base">❌</span>
+            </button>
+        `;
+    }
+
+    function cancelEdit(index) {
+        const itemName = document.getElementById(`itemName-${index}`);
+        const itemQty = document.getElementById(`itemQty-${index}`);
+        const itemPrice = document.getElementById(`itemPrice-${index}`);
+
+        itemName.innerText = items[index].itemName;
+        itemQty.innerText = items[index].qty;
+        itemPrice.innerText = items[index].price;
+
+        const actionBtns = document.querySelector(`#row-${index} td:nth-child(2)`);
+        actionBtns.innerHTML = `
+            <button type="button" onclick="editItem(${index})" class="text-blue-600 hover:underline text-xs">
+                <span class="text-base">✏️</span>
+            </button>
+            <button type="button" onclick="deleteItem(${index})" class="text-red-600 hover:underline text-xs">
+                <span class="text-base">🗑️</span>
+            </button>
+        `;
+    }
+
+    function saveItem(index,SoITemId) {
+        const itemName = document.getElementById(`editItemName-${index}`).value.trim();
+        const itemQty = parseFloat(document.getElementById(`editItemQty-${index}`).value);
+        const itemPrice = parseFloat(document.getElementById(`editItemPrice-${index}`).value);
+
+        if (!itemName || isNaN(itemQty) || isNaN(itemPrice) || itemQty <= 0 || itemPrice <= 0) {
+            alert("Please provide valid item name, quantity, price, and SO Order ID.");
+            return;
+        }
+
+        const itemData = {
+            ItemName: itemName,
+            Quantity: itemQty,
+            price: itemPrice,
+            SoOrderId: @Model.SoOrder.SoOrderId
+        };
+
+        fetch(`http://localhost:5267/SoItem/UpdateItem/${SoITemId}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(itemData)
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert('Item saved successfully.');
+                window.location.reload();
+            } else {
+                alert('Failed to save item. Please try again.');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('There was an error saving the item.');
+        });
+    }
+
+    function deleteItem(SoITemId) {
+        if (confirm('Are you sure you want to delete this item?')) {
+            fetch(`/SoItem/${SoITemId}`, {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert('Item deleted successfully.');
+                    location.reload();
+                } else {
+                    return response.text().then(text => { throw new Error(text); });
+                }
+            })
+            .catch(error => {
+                console.error('Error deleting item:', error);
+                alert('Failed to delete item.');
+            });
+        }
+    }
+
+    function saveRow() {
+        const itemName = document.getElementById("itemName").value.trim();
+        const itemQty = parseFloat(document.getElementById("itemQty").value);
+        const itemPrice = parseFloat(document.getElementById("itemPrice").value);
+
+        if (!itemName || isNaN(itemQty) || isNaN(itemPrice) || itemQty <= 0 || itemPrice <= 0) {
+            alert("Please provide valid item name, quantity, price, and SO Order ID.");
+            return;
+        }
+
+        const itemData = {
+            ItemName: itemName,
+            Quantity: itemQty,
+            price: itemPrice,
+            SoOrderId: @Model.SoOrder.SoOrderId
+        };
+
+        fetch('/SoOrder/SaveItem', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(itemData)
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert('Item saved successfully.');
+                window.location.reload();
+            } else {
+                alert('Failed to save item. Please try again.');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('There was an error saving the item.');
+        });
+    }
+
+
+    function updateSummary() {
+        const totalItems = items.reduce((sum, item) => sum + item.qty, 0);
+        const totalAmount = items.reduce((sum, item) => sum + item.total, 0);
+        document.getElementById("totalItems").innerText = totalItems;
+        document.getElementById("totalAmount").innerText = totalAmount.toLocaleString(undefined, { minimumFractionDigits: 2 });
+    }
+
+</script>
