@@ -239,3 +239,11 @@ C:\deni\dotnet\TechnicalTest\bin\Debug\net9.0\ExcelNumberFormat.dll
 C:\deni\dotnet\TechnicalTest\bin\Debug\net9.0\RBush.dll
 C:\deni\dotnet\TechnicalTest\bin\Debug\net9.0\SixLabors.Fonts.dll
 C:\deni\dotnet\TechnicalTest\bin\Debug\net9.0\System.IO.Packaging.dll
+C:\deni\dotnet\TechnicalTest\bin\Debug\net9.0\publish\web.config
+C:\deni\dotnet\TechnicalTest\bin\Debug\net9.0\publish\appsettings.Development.json
+C:\deni\dotnet\TechnicalTest\bin\Debug\net9.0\publish\appsettings.json
+C:\deni\dotnet\TechnicalTest\bin\Debug\net9.0\publish\package-lock.json
+C:\deni\dotnet\TechnicalTest\bin\Debug\net9.0\publish\package.json
+C:\deni\dotnet\TechnicalTest\bin\Debug\net9.0\publish\TechnicalTest.deps.json
+C:\deni\dotnet\TechnicalTest\bin\Debug\net9.0\publish\TechnicalTest.runtimeconfig.json
+C:\deni\dotnet\TechnicalTest\bin\Debug\net9.0\publish\TechnicalTest.staticwebassets.endpoints.json
